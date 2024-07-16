@@ -1,23 +1,20 @@
-// src/App.js
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
-import Home from './components/Home';
-import About from './components/About';
+import Sidebar from './components/Sidebar';
+import SquadBuilder from './components/SquadBuilder';
 
 function App() {
+  const [formation, setFormation] = useState('4-3-3');
+
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Routes>
-          
-          <Route path="/" exact component={Home} />
-          <Route path="/about" component={About} />
-        </Routes>
+    <div className="App">
+      <Header />
+      <div className="container">
+        <Sidebar setFormation={setFormation} />
+        <SquadBuilder formation={formation} />
       </div>
-    </Router>
+    </div>
   );
 }
 
