@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PlayerSelect from './PlayerSelect';
 
 const Sidebar = ({ setFormation }) => {
   const [squadName, setSquadName] = useState('');
@@ -22,18 +23,16 @@ const Sidebar = ({ setFormation }) => {
         value={squadName}
         onChange={(e) => setSquadName(e.target.value)} 
       />
+      <button>Save</button>
       <h3>Formation</h3>
       <select value={formation} onChange={handleFormationChange}>
         <option value="4-3-3">4-3-3</option>
         <option value="4-4-2">4-4-2</option>
         <option value="3-5-2">3-5-2</option>
-        <option value="4-2-3-1">4-2-3-1</option>
-        <option value="5-3-2">5-3-2</option>
       </select>
-      <button>Save</button>
-      <h3>Player Name</h3>
-      <input type="text" />
-      <button>Search</button>
+      <h3>Player Selection</h3>
+      <PlayerSelect players={players} onPlayerSelect={onPlayerSelect} />
+      <button>Load</button>
     </div>
   );
 };

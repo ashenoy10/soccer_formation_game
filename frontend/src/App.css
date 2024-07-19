@@ -16,11 +16,23 @@ header {
 }
 
 .sidebar, .squad-info {
-  background: #444;
   padding: 20px;
-  margin: 20px;
-  border-radius: 5px;
-  width: 300px;
+  background: #f8f8f8;
+  border-right: 1px solid #ddd;
+}
+
+.player-select {
+  margin-top: 20px;
+}
+
+.selected-player {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.selected-player img {
+  max-width: 100px;
+  margin-bottom: 10px;
 }
 
 .squad {
@@ -34,7 +46,7 @@ header {
 
 .squad-grid {
   display: grid;
-  grid-template-columns: repeat(20, 1fr); /* Twenty columns */
+  grid-template-columns: repeat(9, 1fr); /* Twenty columns */
   grid-template-rows: repeat(4, 1fr); /* Four rows */
   gap: 5px; /* Space between grid items */
   height: 100%; /* Ensure it takes full height */
